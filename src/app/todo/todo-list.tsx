@@ -28,18 +28,24 @@ export default function TodoList() {
     })
     setTodolist(newTools)
   }
+const removeTodo =(id)=>{
+  const newTodos = todoList.filter(item=>item.id!==id)
+  setTodolist(newTodos)
 
+  
+}
   return (
     <ul>
-      {todoList.map((item, index) => {
+      {todoList.map((item)=>{
         return (
           <TodoItem
-            key={index}
+            key={`todo-${item.id}`}
             text={item.title}
             description={item.description}
             completed={item.completed}
             id={item.id}
             toggleCompleted={toggleCompleted}
+            removeTodo={removeTodo}
           />
         );
       })}
