@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/button";
-import uuid4 from "uuid4"
+import uuid4 from "uuid4";
 export default function TodoForm(props) {
   const { addTodo } = props;
   const [todo, setTodo] = useState({
@@ -15,12 +15,12 @@ export default function TodoForm(props) {
   };
   const handleSumbit = (e) => {
     e.preventDefault();
-    const newTodo = { ...todo, completed: false, id:uuid4() };
+    const newTodo = { ...todo, completed: false, id: uuid4() };
     addTodo(newTodo);
     setTodo({
-      title:'',
-      description:''
-    })
+      title: "",
+      description: "",
+    });
   };
   return (
     <form onSubmit={handleSumbit}>
