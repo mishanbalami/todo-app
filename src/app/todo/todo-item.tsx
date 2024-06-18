@@ -1,3 +1,5 @@
+import Button from "../../components/button";
+
 export default function TodoItem(props) {
   return(
      <li>
@@ -9,6 +11,7 @@ export default function TodoItem(props) {
        />
     <h6>{props.text}</h6>
     <p>{props.description}</p>
+    <Button title="Delete"onClick={()=>props.removeTodo(props.id)}/>
   </li>
   )
 }
